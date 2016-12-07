@@ -2715,3 +2715,6 @@ libxapp.so.1 xapps-1.0.2_1
 libite.so.3 libite-1.8.2_1
 libccgnu2-1.8.so.0 commoncpp2-1.8.1_1
 libccext2-1.8.so.0 commoncpp2-1.8.1_1
+libucommon.so.8 ucommon-7.0.0_1
+libusecure.so.8 ucommon-7.0.0_1
+libcommoncpp.so.8 ucommon-7.0.0_1
