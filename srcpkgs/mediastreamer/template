@@ -1,0 +1,28 @@
+# Template file for 'mediastreamer'
+pkgname=mediastreamer
+version=2.14.0
+revision=1
+short_desc="Powerful and lightweight streaming engine for voice/video telephony"
+maintainer="David <kalichakra@zoho.com>"
+build_style="gnu-configure"
+license="GPL-2"
+homepage="https://www.linphone.org/technical-corner/mediastreamer2/overview"
+distfiles="http://download.savannah.gnu.org/releases/linphone/${pkgname}/${pkgname}-${version}.tar.gz"
+checksum="1144849c0c96abafb1153adf56109f0f195a9e4a53cf28cb611bbca7a9012c1a"
+
+hostmakedepends="intltool automake gettext libtool pkg-config xxd"
+makedepends="ffmpeg-devel libupnp-devel opus-devel libXv-devel speex-devel
+ glew-devel libsrtp-devel ortp-devel v4l-utils-devel alsa-lib-devel pulseaudio-devel
+ mbedtls-devel libvpx-devel gettext-devel bzrtp-devel"
+
+configure_args="--enable-zrtp --enable-external-ortp --enable-glx --disable-strict"
+
+mediastreamer-devel_package() {
+	depends="${sourcepkg}>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+		vmove usr/lib/*.so
+	}
+}
