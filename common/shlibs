@@ -2744,3 +2744,5 @@ libkea-dns++.so.1 libkea-1.1.0_1
 libkea-util-io.so.0 libkea-1.1.0_1
 libkea-threads.so.1 libkea-1.1.0_1
 libcunit.so.1 cunit-2.1_1
+libbctoolbox.so.0 bctoolbox-0.2.0_1
+libbctoolbox-tester.so.0 bctoolbox-0.2.0_1
