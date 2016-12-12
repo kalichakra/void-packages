@@ -1,0 +1,27 @@
+# Template file for 'linphone'
+pkgname=linphone
+version=3.10.2
+revision=1
+short_desc="A Voice-over-IP phone"
+maintainer="David <kalichakra@zoho.com>"
+build_style="gnu-configure"
+license="GPL-2"
+homepage="http://www.linphone.org"
+distfiles="https://www.linphone.org/releases/sources/${pkgname}/${pkgname}-${version}.tar.gz"
+checksum="37cac1f4daa55fcd395b7b49925c01d1638b9d941c66d626ca36a9679332384c"
+
+makedepends="sqlite-devel readline-devel mediastreamer-devel
+ belle-sip-devel speex-devel libxml2-devel libnotify-devel
+ bctoolbox-devel ortp-devel bzrtp-devel gtk+-devel gettext-devel
+ libupnp-devel libsrtp-devel"
+
+hostmakedepends="intltool libtool pkg-config xxd"
+
+configure_args="--enable-zrtp --disable-strict --disable-static \
+		--enable-external-ortp --enable-external-mediastreamer"
+
+post_configure() {
+	# Pass --tag=CC to libtool when linking
+	sed -i 's#linphone_LINK = $(LIBTOOL)#linphone_LINK = $(LIBTOOL) --tag=CC#' \
+		gtk/Makefile
+}

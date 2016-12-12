@@ -2777,3 +2777,5 @@ libbzrtp.so.0 bzrtp-1.0.4_1
 libbellesip.so.0 belle-sip-1.5.0_1
 libmediastreamer_base.so.7 mediastreamer-2.14.0_1
 libmediastreamer_voip.so.7 mediastreamer-2.14.0_1
+liblinphonetester.so.0 linphone-3.10.2_1
+liblinphone.so.9 linphone-3.10.2_1
