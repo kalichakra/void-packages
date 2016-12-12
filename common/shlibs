@@ -2772,3 +2772,4 @@ libcunit.so.1 cunit-2.1_1
 libbctoolbox.so.0 bctoolbox-0.2.0_1
 libbctoolbox-tester.so.0 bctoolbox-0.2.0_1
 libantlr3c.so libantlr3c-3.4_1
+libortp.so.11 ortp-0.27.0_1
