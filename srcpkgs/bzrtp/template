@@ -1,0 +1,24 @@
+# Template file for 'bzrtp'
+pkgname=bzrtp
+version=1.0.4
+revision=1
+short_desc="Opensource implementation of ZRTP keys exchange protocol"
+maintainer="David <kalichakra@zoho.com>"
+build_style="gnu-configure"
+license="GPL-2"
+homepage="http://www.linphone.org"
+distfiles="http://download.savannah.gnu.org/releases/linphone/${pkgname}/${pkgname}-${version}.tar.gz"
+checksum="8113c6afde48916113d028369d04bcaba4964e756066a7290ae1bd2eeece0caa"
+
+hostmakedepends="pkg-config"
+makedepends="mbedtls-devel libxml2-devel bctoolbox-devel"
+
+bzrtp-devel_package() {
+	depends="${makedepends} ${sourcepkg}>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/*.so
+		vmove usr/lib/pkgconfig
+	}
+}
