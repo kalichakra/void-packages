@@ -1,0 +1,21 @@
+# Template file for 'cunit'
+pkgname=cunit
+version=2.1
+revision=1
+short_desc="Unit testing framework for C"
+build_style="gnu-configure"
+maintainer="David <kalichakra@zoho.com>"
+license="GPL-2"
+homepage="http://cunit.sourceforge.net"
+distfiles="${SOURCEFORGE_SITE}/project/${pkgname}/CUnit/${version}-3/CUnit-${version}-3.tar.bz2"
+checksum="f5b29137f845bb08b77ec60584fdb728b4e58f1023e6f249a464efa49a40f214"
+wrksrc="CUnit-${version}-3"
+
+hostmakedepends="pkg-config libtool automake"
+
+pre_configure() {
+	sed -i 's#doc/@PACKAGE@#share/doc/@PACKAGE@#' doc/Makefile.am
+	sed -i 's#doc/@PACKAGE@#share/doc/@PACKAGE@#' doc/headers/Makefile.am
+
+	autoreconf -fi
+}
